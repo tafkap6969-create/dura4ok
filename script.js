@@ -41,11 +41,25 @@ function dealPlayerCards() {
   });
 }
 
-function dealOpponentCards() {
-  opponentHand.innerHTML = '';
-  for (let i = 0; i < 6; i++) {
+function dealPlayerCards() {
+  playerHand.innerHTML = '';
+  const cards = ['6♠', '7♥', '8♦', '9♣', '10♠', 'J♥'];
+
+  cards.forEach(card => {
     const el = document.createElement('div');
-    el.className = 'card back';
-    opponentHand.appendChild(el);
-  }
+    el.className = 'card';
+    el.innerText = card;
+
+    el.onclick = () => {
+      // снять выбор со всех карт
+      document
+        .querySelectorAll('.player .hand .card')
+        .forEach(c => c.classList.remove('selected'));
+
+      // выбрать текущую
+      el.classList.add('selected');
+    };
+
+    playerHand.appendChild(el);
+  });
 }
