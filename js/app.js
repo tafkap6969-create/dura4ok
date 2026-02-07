@@ -1,23 +1,17 @@
-const tg = window.Telegram?.WebApp;
-if (tg) {
-  tg.ready();
-  tg.expand();
-  tg.setBackgroundColor('#0b6623');
-  tg.setHeaderColor('#0b6623');
-}
+document.getElementById('attack-btn').onclick = () => {
+  if (gameState.turn !== 'player') return;
 
-const user = tg?.initDataUnsafe?.user;
-const userText = document.getElementById('user');
-const startBtn = document.getElementById('start-btn');
+  const selected = gameState.players.player.filter(c => c.selected);
+  if (!selected.length) return;
 
-if (user) {
-  userText.innerText = `Привет, ${user.first_name} 👋`;
-}
+  selected.forEach(card => {
+    gameState.table.push(card);
+  });
 
-startBtn.onclick = () => {
-  document.getElementById('start-screen').classList.remove('active');
-  document.getElementById('game-screen').classList.add('active');
+  gameState.players.player =
+    gameState.players.player.filter(c => !c.selected);
 
-  startGame();
+  gameState.turn = 'opponent';
+
   renderHands();
 };
