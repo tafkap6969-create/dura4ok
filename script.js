@@ -29,6 +29,7 @@ startBtn.onclick = () => {
   dealOpponentCards();
 };
 
+// 🧑 МОИ КАРТЫ
 function dealPlayerCards() {
   playerHand.innerHTML = '';
   const cards = ['6♠', '7♥', '8♦', '9♣', '10♠', 'J♥'];
@@ -37,26 +38,22 @@ function dealPlayerCards() {
     const el = document.createElement('div');
     el.className = 'card';
     el.innerText = card;
+
+    el.onclick = () => {
+      document
+        .querySelectorAll('.player .hand .card')
+        .forEach(c => c.classList.remove('selected'));
+
+      el.classList.add('selected');
+    };
+
     playerHand.appendChild(el);
   });
 }
 
-playerHand.addEventListener('click', (e) => {
-  const card = e.target.closest('.card');
-  if (!card) return;
-
-  // снять выделение со всех
-  playerHand
-    .querySelectorAll('.card')
-    .forEach(c => c.classList.remove('selected'));
-
-  // выбрать текущую
-  card.classList.add('selected');
-});
-
+// 👿 КАРТЫ ПРОТИВНИКА
 function dealOpponentCards() {
   opponentHand.innerHTML = '';
-
   const count = 6;
 
   for (let i = 0; i < count; i++) {
