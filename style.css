@@ -45,7 +45,10 @@ body {
 
 .hand {
   display: flex;
-  gap: 6px;
+  flex-direction: row;      /* ⬅️ строго горизонтально */
+  justify-content: center;  /* по центру */
+  align-items: center;
+  gap: 8px;
 }
 
 /* ЦЕНТР */
