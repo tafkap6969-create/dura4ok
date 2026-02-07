@@ -126,3 +126,16 @@ button {
   border: none;
   background: #ffd700;
 }
+
+.card.back {
+  background: linear-gradient(135deg, #2b2b2b, #111);
+  border: 2px solid #555;
+  color: transparent;
+  cursor: default;
+}
+
+.card.back::after {
+  content: "♠";
+  color: #999;
+  font-size: 28px;
+}
