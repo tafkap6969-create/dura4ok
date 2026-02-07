@@ -42,3 +42,16 @@ body {
 .deck {
   font-size: 48px;
 }
+
+.screen {
+  display: none;
+  height: 100vh;
+}
+
+.screen.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
