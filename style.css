@@ -77,19 +77,26 @@ body {
 }
 
 .player .hand .card {
+  --r: 0deg;
   margin-left: -18px;
+  transform: rotate(var(--r));
+  transition: transform 0.2s;
 }
 
-.player .hand .card:nth-child(1) { transform: rotate(-8deg); }
-.player .hand .card:nth-child(2) { transform: rotate(-4deg); }
-.player .hand .card:nth-child(3) { transform: rotate(0deg); }
-.player .hand .card:nth-child(4) { transform: rotate(4deg); }
-.player .hand .card:nth-child(5) { transform: rotate(8deg); }
-.player .hand .card:nth-child(6) { transform: rotate(12deg); }
+.player .hand .card:nth-child(1) { --r: -8deg; }
+.player .hand .card:nth-child(2) { --r: -4deg; }
+.player .hand .card:nth-child(3) { --r: 0deg; }
+.player .hand .card:nth-child(4) { --r: 4deg; }
+.player .hand .card:nth-child(5) { --r: 8deg; }
+.player .hand .card:nth-child(6) { --r: 12deg; }
 
 .player .hand .card:hover {
-  transform: translateY(-16px) scale(1.05);
+  transform: translateY(-16px) scale(1.05) rotate(var(--r));
   z-index: 10;
+}
+
+.player .hand {
+  padding-left: 18px;
 }
 
 .card.back {
