@@ -53,3 +53,15 @@ playerHand.addEventListener('click', (e) => {
   // выбрать текущую
   card.classList.add('selected');
 });
+
+function dealOpponentCards() {
+  opponentHand.innerHTML = '';
+
+  const count = 6;
+
+  for (let i = 0; i < count; i++) {
+    const el = document.createElement('div');
+    el.className = 'card back';
+    opponentHand.appendChild(el);
+  }
+}
