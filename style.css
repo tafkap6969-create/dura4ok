@@ -95,6 +95,12 @@ body {
   z-index: 10;
 }
 
+.player .hand .card.selected {
+  transform: translateY(-22px) scale(1.05) rotate(var(--r));
+  z-index: 20;
+  box-shadow: 0 12px 20px rgba(0,0,0,0.6);
+}
+
 .player .hand {
   padding-left: 18px;
 }
