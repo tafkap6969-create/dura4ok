@@ -87,6 +87,11 @@ body {
 .player .hand .card:nth-child(5) { transform: rotate(8deg); }
 .player .hand .card:nth-child(6) { transform: rotate(12deg); }
 
+.player .hand .card:hover {
+  transform: translateY(-16px) scale(1.05);
+  z-index: 10;
+}
+
 .card.back {
   background: #1c1c1c;
 }
