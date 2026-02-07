@@ -106,7 +106,16 @@ body {
 }
 
 .card.back {
-  background: #1c1c1c;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: transparent;
+  position: relative;
+}
+
+.card.back::after {
+  content: "♠";
+  color: rgba(255,255,255,0.3);
+  font-size: 28px;
+  position: absolute;
 }
 
 /* КНОПКА */
