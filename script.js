@@ -1,15 +1,22 @@
-const tg = window.Telegram.WebApp;
-tg.ready();
-tg.expand();
+const tg = window.Telegram?.WebApp;
+if (tg) {
+  tg.ready();
+  tg.expand();
+}
 
-const user = tg.initDataUnsafe?.user;
+const user = tg?.initDataUnsafe?.user;
 
 const startScreen = document.getElementById('start-screen');
 const gameScreen = document.getElementById('game-screen');
 const userText = document.getElementById('user');
 const startBtn = document.getElementById('start-btn');
 
-if (user) {
+if (!startScreen || !gameScreen || !startBtn) {
+  console.error('❌ Не найдены элементы экрана');
+  throw new Error('Screen elements missing');
+}
+
+if (user && userText) {
   userText.innerText = `Привет, ${user.first_name} 👋`;
 }
 
