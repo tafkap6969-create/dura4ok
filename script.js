@@ -17,3 +17,19 @@ startBtn.onclick = () => {
   startScreen.classList.remove('active');
   gameScreen.classList.add('active');
 };
+
+const playerHand = document.querySelector('.player .hand');
+
+const cards = ['6♠', '7♥', '8♦', '9♣', '10♠', 'J♥'];
+
+cards.forEach(card => {
+  const el = document.createElement('div');
+  el.className = 'card';
+  el.innerText = card;
+
+  el.onclick = () => {
+    el.style.transform = 'translateY(-10px)';
+  };
+
+  playerHand.appendChild(el);
+});
