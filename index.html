@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Durak Mini App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-  <!-- подключаем CSS -->
-  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+<!-- СТАРТОВЫЙ ЭКРАН -->
 <div id="start-screen" class="screen active">
   <h2 id="user">Загрузка...</h2>
   <button id="start-btn">Начать игру</button>
 </div>
 
+<!-- ИГРОВОЙ СТОЛ -->
 <div id="game-screen" class="screen">
 
-  <!-- ПРОТИВНИК — СВЕРХУ -->
+  <!-- ПРОТИВНИК -->
   <div class="opponent">
     <div class="label">Противник</div>
-    <div class="hand"></div>
+    <div class="hand" id="opponent-hand"></div>
   </div>
 
-  <!-- СТОЛ — ПО ЦЕНТРУ -->
+  <!-- ЦЕНТР СТОЛА -->
   <div class="table">
-    <div class="battle"></div>
+    <div class="battle" id="battle"></div>
     <div class="deck">🂠</div>
   </div>
 
-  <!-- ТЫ — СНИЗУ -->
+  <!-- ИГРОК -->
   <div class="player">
-    <div class="hand"></div>
+    <div class="hand" id="player-hand"></div>
     <div class="label">Ты</div>
   </div>
 
@@ -41,7 +42,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
