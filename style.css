@@ -48,10 +48,14 @@ body {
   height: 100vh;
 }
 
-.screen.active {
+#start-screen.active {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+#game-screen.active {
+  display: block;
 }
