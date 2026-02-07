@@ -10,28 +10,25 @@
 </head>
 <body>
 
-<!-- СТАРТОВЫЙ ЭКРАН -->
+<!-- СТАРТ -->
 <div id="start-screen" class="screen active">
   <h2 id="user">Загрузка...</h2>
-  <button id="start-btn">Начать игру</button>
+  <button id="start-btn">Играть</button>
 </div>
 
-<!-- ИГРОВОЙ СТОЛ -->
+<!-- ИГРА -->
 <div id="game-screen" class="screen">
 
-  <!-- ПРОТИВНИК -->
   <div class="opponent">
     <div class="label">Противник</div>
     <div class="hand" id="opponent-hand"></div>
   </div>
 
-  <!-- ЦЕНТР СТОЛА -->
   <div class="table">
-    <div class="battle" id="battle"></div>
+    <div id="trump"></div>
     <div class="deck">🂠</div>
   </div>
 
-  <!-- ИГРОК -->
   <div class="player">
     <div class="hand" id="player-hand"></div>
     <div class="label">Ты</div>
@@ -39,6 +36,10 @@
 
 </div>
 
-<script src="script.js"></script>
+<script src="js/deck.js"></script>
+<script src="js/game.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+
 </body>
 </html>
