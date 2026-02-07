@@ -17,9 +17,12 @@
 }
 
 /* игровой экран */
-#game-screen {
-  justify-content: stretch;
-  align-items: stretch;
+##game-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: radial-gradient(circle at center, #157a3b, #0b6623);
 }
 
 .card {
@@ -36,8 +39,8 @@
   user-select: none;
 }
 
-.player .hand {
-  margin-bottom: 8px;
+.player {
+  padding-bottom: 12px;
 }
 
 .card.selected {
@@ -66,4 +69,20 @@ html, body {
 
 .screen {
   background-color: #0b6623 !important;
+}
+
+.opponent {
+  padding-top: 10px;
+}
+
+.opponent .hand,
+.player .hand {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.card.back {
+  background: #1c1c1c;
+  color: transparent;
 }
