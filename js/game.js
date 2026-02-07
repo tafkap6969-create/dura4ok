@@ -1,10 +1,12 @@
 const gameState = {
   deck: [],
   trump: null,
+  table: [],
   players: {
     player: [],
     opponent: []
-  }
+  },
+  turn: 'player'
 };
 
 function startGame() {
