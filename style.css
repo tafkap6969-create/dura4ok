@@ -1,61 +1,23 @@
-body {
-  margin: 0;
-  background: #0b6623;
-  font-family: system-ui, sans-serif;
-  color: white;
-}
-
-.game {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 12px;
-}
-
-.opponent, .player {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hand {
-  display: flex;
-  gap: 8px;
-  min-height: 60px;
-}
-
-.table {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-}
-
-.battle {
-  min-width: 200px;
-  min-height: 120px;
-  border: 2px dashed rgba(255,255,255,0.3);
-  border-radius: 12px;
-}
-
-.deck {
-  font-size: 48px;
-}
-
 .screen {
   display: none;
   height: 100vh;
+  width: 100vw;
 }
 
-#start-screen.active {
+.screen.active {
   display: flex;
-  flex-direction: column;
+}
+
+/* стартовый экран */
+#start-screen {
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 20px;
 }
 
-#game-screen.active {
-  display: block;
+/* игровой экран */
+#game-screen {
+  justify-content: stretch;
+  align-items: stretch;
 }
