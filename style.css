@@ -73,3 +73,30 @@ button {
   border: none;
   background: #ffd700;
 }
+
+/* КНОПКИ */
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+#attack-btn {
+  background: #ffd700;
+  border-radius: 14px;
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+/* СТОЛ */
+#battle {
+  display: flex;
+  gap: 10px;
+}
+
+/* ВЫБРАННАЯ КАРТА */
+.card.selected {
+  transform: translateY(-18px) scale(1.05);
+  border: 2px solid gold;
+  z-index: 10;
+}
