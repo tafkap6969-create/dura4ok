@@ -1,6 +1,4 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -17,27 +15,13 @@ body {
 
 .screen.active {
   display: flex;
-}
-
-/* СТАРТОВЫЙ ЭКРАН */
-#start-screen {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-/* ИГРОВОЙ СТОЛ */
-#game-screen {
   flex-direction: column;
   justify-content: space-between;
   padding: 12px;
-  background: radial-gradient(circle, #157a3b, #0b6623);
 }
 
 /* ЗОНЫ */
-.opponent,
-.player {
+.opponent, .player {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,25 +29,21 @@ body {
 
 .hand {
   display: flex;
-  flex-direction: row;      /* ⬅️ строго горизонтально */
-  justify-content: center;  /* по центру */
+  justify-content: center;
   align-items: center;
-  gap: 8px;
 }
 
-/* ЦЕНТР */
 .table {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-  min-height: 120px;
+  gap: 20px;
 }
 
 /* КАРТЫ */
 .card {
-  width: 64px;          /* было ~52 */
-  height: 92px;         /* было ~74 */
+  width: 64px;
+  height: 92px;
   background: white;
   color: black;
   border-radius: 10px;
@@ -71,71 +51,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.player .hand .card {
-  --r: 0deg;
   margin-left: -18px;
-  transform: rotate(var(--r));
-  transition: transform 0.2s;
-}
-
-.player .hand .card:nth-child(1) { --r: -8deg; }
-.player .hand .card:nth-child(2) { --r: -4deg; }
-.player .hand .card:nth-child(3) { --r: 0deg; }
-.player .hand .card:nth-child(4) { --r: 4deg; }
-.player .hand .card:nth-child(5) { --r: 8deg; }
-.player .hand .card:nth-child(6) { --r: 12deg; }
-
-.player .hand .card:hover {
-  transform: translateY(-16px) scale(1.05) rotate(var(--r));
-  z-index: 10;
-}
-
-.player .hand .card.selected {
-  transform: translateY(-22px) scale(1.05) rotate(var(--r));
-  z-index: 20;
-  box-shadow: 0 12px 20px rgba(0,0,0,0.6);
-}
-
-.player .hand {
-  padding-left: 18px;
 }
 
 .card.back {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: transparent;
-  position: relative;
+  background: #1c1c1c;
 }
 
-.card.back::after {
-  content: "♠";
-  color: rgba(255,255,255,0.3);
-  font-size: 28px;
-  position: absolute;
-}
+/* ВЕЕР ИГРОКА */
+.player .card:nth-child(1) { transform: rotate(-8deg); }
+.player .card:nth-child(2) { transform: rotate(-4deg); }
+.player .card:nth-child(3) { transform: rotate(0); }
+.player .card:nth-child(4) { transform: rotate(4deg); }
+.player .card:nth-child(5) { transform: rotate(8deg); }
+.player .card:nth-child(6) { transform: rotate(12deg); }
 
-/* КНОПКА */
 button {
   padding: 14px 22px;
   font-size: 16px;
   border-radius: 14px;
   border: none;
   background: #ffd700;
-}
-
-.card.back {
-  background: linear-gradient(135deg, #2b2b2b, #111);
-  border: 2px solid #555;
-  color: transparent;
-  cursor: default;
-}
-
-.card.back::after {
-  content: "♠";
-  color: #999;
-  font-size: 28px;
 }
