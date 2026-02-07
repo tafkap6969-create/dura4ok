@@ -55,3 +55,7 @@ body {
 #start-screen {
   background: #0b6623;
 }
+
+.screen {
+  background-color: #0b6623 !important;
+}
