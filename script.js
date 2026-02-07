@@ -16,20 +16,25 @@ if (user) {
 startBtn.onclick = () => {
   startScreen.classList.remove('active');
   gameScreen.classList.add('active');
+
+  dealCards(); // ⬅️ ВАЖНО
 };
 
-const playerHand = document.querySelector('.player .hand');
+function dealCards() {
+  const playerHand = document.querySelector('.player .hand');
+  playerHand.innerHTML = '';
 
-const cards = ['6♠', '7♥', '8♦', '9♣', '10♠', 'J♥'];
+  const cards = ['6♠', '7♥', '8♦', '9♣', '10♠', 'J♥'];
 
-cards.forEach(card => {
-  const el = document.createElement('div');
-  el.className = 'card';
-  el.innerText = card;
+  cards.forEach(card => {
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.innerText = card;
 
-  el.onclick = () => {
-    el.style.transform = 'translateY(-10px)';
-  };
+    el.onclick = () => {
+      el.classList.toggle('selected');
+    };
 
-  playerHand.appendChild(el);
-});
+    playerHand.appendChild(el);
+  });
+}
