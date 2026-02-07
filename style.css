@@ -1,18 +1,44 @@
 body {
   margin: 0;
+  background: #0b6623;
   font-family: system-ui, sans-serif;
-  background: green;
   color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
-button {
-  padding: 14px 22px;
-  font-size: 16px;
-  border-radius: 14px;
-  border: none;
+.game {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.opponent, .player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hand {
+  display: flex;
+  gap: 8px;
+  min-height: 60px;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.battle {
+  min-width: 200px;
+  min-height: 120px;
+  border: 2px dashed rgba(255,255,255,0.3);
+  border-radius: 12px;
+}
+
+.deck {
+  font-size: 48px;
 }
