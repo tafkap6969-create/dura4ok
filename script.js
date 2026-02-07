@@ -37,17 +37,19 @@ function dealPlayerCards() {
     const el = document.createElement('div');
     el.className = 'card';
     el.innerText = card;
-
-    el.onclick = () => {
-      // снять выбор со всех карт
-      document
-        .querySelectorAll('.player .hand .card')
-        .forEach(c => c.classList.remove('selected'));
-
-      // выбрать текущую
-      el.classList.add('selected');
-    };
-
     playerHand.appendChild(el);
   });
 }
+
+playerHand.addEventListener('click', (e) => {
+  const card = e.target.closest('.card');
+  if (!card) return;
+
+  // снять выделение со всех
+  playerHand
+    .querySelectorAll('.card')
+    .forEach(c => c.classList.remove('selected'));
+
+  // выбрать текущую
+  card.classList.add('selected');
+});
