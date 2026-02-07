@@ -39,3 +39,7 @@
 .player .hand {
   margin-bottom: 8px;
 }
+
+.card.selected {
+  transform: translateY(-10px);
+}
