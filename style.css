@@ -43,3 +43,15 @@
 .card.selected {
   transform: translateY(-10px);
 }
+
+body {
+  background: #0b6623;
+}
+
+#game-screen {
+  background: #0b6623;
+}
+
+#start-screen {
+  background: #0b6623;
+}
