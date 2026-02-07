@@ -62,18 +62,30 @@ body {
 
 /* КАРТЫ */
 .card {
-  width: 52px;
-  height: 74px;
+  width: 64px;          /* было ~52 */
+  height: 92px;         /* было ~74 */
   background: white;
   color: black;
-  border-radius: 8px;
-  font-size: 18px;
+  border-radius: 10px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
   cursor: pointer;
+  transition: transform 0.2s;
 }
+
+.player .hand .card {
+  margin-left: -18px;
+}
+
+.player .hand .card:nth-child(1) { transform: rotate(-8deg); }
+.player .hand .card:nth-child(2) { transform: rotate(-4deg); }
+.player .hand .card:nth-child(3) { transform: rotate(0deg); }
+.player .hand .card:nth-child(4) { transform: rotate(4deg); }
+.player .hand .card:nth-child(5) { transform: rotate(8deg); }
+.player .hand .card:nth-child(6) { transform: rotate(12deg); }
 
 .card.back {
   background: #1c1c1c;
