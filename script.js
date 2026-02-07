@@ -37,18 +37,6 @@ function dealPlayerCards() {
     const el = document.createElement('div');
     el.className = 'card';
     el.innerText = card;
-    playerHand.appendChild(el);
-  });
-}
-
-function dealPlayerCards() {
-  playerHand.innerHTML = '';
-  const cards = ['6♠', '7♥', '8♦', '9♣', '10♠', 'J♥'];
-
-  cards.forEach(card => {
-    const el = document.createElement('div');
-    el.className = 'card';
-    el.innerText = card;
 
     el.onclick = () => {
       // снять выбор со всех карт
