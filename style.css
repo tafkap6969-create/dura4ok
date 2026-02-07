@@ -1,3 +1,18 @@
 body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
   background: green;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  padding: 14px 22px;
+  font-size: 16px;
+  border-radius: 14px;
+  border: none;
 }
