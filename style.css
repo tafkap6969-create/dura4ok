@@ -21,3 +21,21 @@
   justify-content: stretch;
   align-items: stretch;
 }
+
+.card {
+  width: 50px;
+  height: 72px;
+  background: white;
+  border-radius: 8px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.player .hand {
+  margin-bottom: 8px;
+}
