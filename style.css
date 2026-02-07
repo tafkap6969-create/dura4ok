@@ -1,3 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #0b6623;
+  color: white;
+}
+
 .screen {
   display: none;
   height: 100vh;
@@ -8,81 +19,68 @@
   display: flex;
 }
 
-/* стартовый экран */
+/* СТАРТОВЫЙ ЭКРАН */
 #start-screen {
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   gap: 20px;
 }
 
-/* игровой экран */
-##game-screen {
-  height: 100vh;
-  display: flex;
+/* ИГРОВОЙ СТОЛ */
+#game-screen {
   flex-direction: column;
   justify-content: space-between;
-  background: radial-gradient(circle at center, #157a3b, #0b6623);
+  padding: 12px;
+  background: radial-gradient(circle, #157a3b, #0b6623);
 }
 
-.card {
-  width: 50px;
-  height: 72px;
-  background: white;
-  border-radius: 8px;
-  color: black;
+/* ЗОНЫ */
+.opponent,
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hand {
+  display: flex;
+  gap: 6px;
+}
+
+/* ЦЕНТР */
+.table {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
-  cursor: pointer;
-  user-select: none;
+  gap: 30px;
+  min-height: 120px;
 }
 
-.player {
-  padding-bottom: 12px;
-}
-
-.card.selected {
-  transform: translateY(-10px);
-}
-
-body {
-  background: #0b6623;
-}
-
-#game-screen {
-  background: #0b6623;
-}
-
-#start-screen {
-  background: #0b6623;
-}
-
-.screen {
-  background-color: #0b6623 !important;
-}
-
-html, body {
-  background-color: #0b6623 !important;
-}
-
-.screen {
-  background-color: #0b6623 !important;
-}
-
-.opponent {
-  padding-top: 10px;
-}
-
-.opponent .hand,
-.player .hand {
+/* КАРТЫ */
+.card {
+  width: 52px;
+  height: 74px;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  font-size: 18px;
   display: flex;
   justify-content: center;
-  gap: 6px;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  cursor: pointer;
 }
 
 .card.back {
   background: #1c1c1c;
-  color: transparent;
+}
+
+/* КНОПКА */
+button {
+  padding: 14px 22px;
+  font-size: 16px;
+  border-radius: 14px;
+  border: none;
+  background: #ffd700;
 }
